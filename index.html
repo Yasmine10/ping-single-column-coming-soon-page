@@ -5,7 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script async src="https://kit.fontawesome.com/b95f0b9af4.js" crossorigin="anonymous"></script>
+  <script defer src="https://kit.fontawesome.com/b95f0b9af4.js" crossorigin="anonymous"></script>
+  <script defer src="app/js/form-validation.js"></script>
 
   <link rel="icon" type="image/png" sizes="32x32" href="app/assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="/dist/css/main.css">
@@ -23,10 +24,14 @@
       <section class="launching">
         <h1 class="launching__title">We are launching <strong>soon!</strong></h1>
         <p class="launching__text">Subscribe and get notified</p>
-        <form class="launching__form" action="">
-          <input type="email" id="email" name="email" placeholder="Your email address...">
+        <form id="form" class="launching__form" action="/" method="GET">
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your email address...">
+            <small id="error-email" class="error-message"></small>
+          </div>
           <button type="submit" class="btn-primary">Notify Me</button>
         </form>
+        
         <img class="launching__image" src="/app/assets/images/illustration-dashboard.png" alt="Screenshot of what the website will look like">
       </section>
     </div>

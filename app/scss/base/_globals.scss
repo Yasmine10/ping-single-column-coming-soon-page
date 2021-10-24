@@ -39,7 +39,7 @@ body {
   align-items: stretch;
 
   font-family: var(--ff-primary);
-  font-size: map.get($fontsizes-mobile, "text");
+  font-size: clamp(map.get($fontsizes-mobile, "text"), calc(1vw + 0.25rem) , map.get($fontsizes-desktop, "text"));
 }
 
 main {
@@ -53,7 +53,7 @@ header, main, footer {
 /* typography */
 
 h1 {
-  font-size: map.get($fontsizes-mobile, "header");
+  font-size: clamp(map.get($fontsizes-mobile, "header"), calc(3vw + 0.5rem) , map.get($fontsizes-desktop, "header"));
   font-weight: map.get($fontweights, "light");
   color: var(--clr-neutral-gray);
 }
@@ -70,7 +70,7 @@ strong {
   padding: 1.15em 3.875em;    // 1.125em 3.875em
   border: none;
   border-radius: 1.75rem;
-  font-size: map.get($fontsizes-mobile, "text");
+  font-size: clamp(map.get($fontsizes-mobile, "text"), calc(1vw + 0.25rem) , map.get($fontsizes-desktop, "text"));
   font-weight: map.get($fontweights, "semi-bold");
   line-height: 1.35;
 }
@@ -84,7 +84,7 @@ strong {
 
   &:hover,
   &:focus {
-
+    opacity: 0.8;
   }
 }
 
@@ -97,4 +97,28 @@ input[type="email"] {
   padding: 1em 2rem;
   
   color: hsla(223, 59%, 70%, 1);
+
+  &::placeholder {
+    font-size: clamp(map.get($fontsizes-mobile, "text"), calc(1vw + 0.25rem) , map.get($fontsizes-desktop, "text"));
+  }
+
+  &:focus-visible {
+    border: 1px solid var(--clr-primary);
+    outline: none;
+  }
+}
+
+.invalid,
+.invalid:focus,
+.invalid:focus-visible {
+  outline: 1px solid var(--clr-secondary-red);
+  border: 1px solid var(--clr-secondary-red);
+}
+
+
+.error-message  {
+  padding-top: 1em;
+  font-size: clamp(map.get($fontsizes-mobile, "copyright"), calc(1vw + 0.25rem) , map.get($fontsizes-desktop, "copyright"));
+  font-style: italic;
+  color: var(--clr-secondary-red);
 }
