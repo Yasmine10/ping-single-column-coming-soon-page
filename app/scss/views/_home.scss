@@ -37,7 +37,6 @@
       flex-direction: row;
       grid-template-columns: 2fr 12.5rem;
       grid-template-rows: 1fr 1.5rem;
-      // grid-template-rows: 1fr;
       
       .form-group {
         flex-grow: 1;
@@ -52,7 +51,6 @@
 
       button {
         flex-grow: 0;
-        // align-self: flex-end;
         justify-self: flex-end;
         grid-row: 1 / 2;
       }
@@ -69,11 +67,14 @@
     margin-top: 5rem;
 
     @include mq(medium) {
-      margin-top: 3.5rem;
+      max-width: 90%;
+      margin: 0 auto;
+      margin-top: 2.5rem;
     }
 
     @include mq(large) {
-      margin-top: 2rem;
+      
+      margin-top: 1rem;
     }
   }
 }
