@@ -91,7 +91,7 @@ strong {
 
 /* form styles */
 
-input[type="email"] {
+input[type="text"], input[type="email"] {
   background: none;
   border: 1px solid var(--clr-secondary-blue);
   border-radius: 1.75rem;
