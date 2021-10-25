@@ -1,0 +1,125 @@
+/* ---------------------------- */
+/* ---------- GLOBALS --------- */
+/* ---------------------------- */
+
+@use "sass:map";
+@use "utils" as *;
+
+$fontsizes-desktop: (
+  "header": 3rem,         // 48px
+  "subheader": 1.25rem,   // 20px
+  "copyright": 0.75rem,   // 12px
+  "text": 1rem,           // 16px 
+);
+
+$fontsizes-mobile: (
+  "header": 1.375rem,     // 22px
+  "subheader": 0.75rem,   // 12px
+  "copyright": 0.625rem,  // 10px
+  "text": 0.75rem,        // 12px
+);
+
+$fontweights: (
+  "light": 300,
+  "semi-bold": 600,
+  "bold": 700,
+);
+
+/* general */
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  font-family: var(--ff-primary);
+  font-size: clamp(map.get($fontsizes-mobile, "text"), calc(1vw + 0.25rem) , map.get($fontsizes-desktop, "text"));
+}
+
+main {
+  flex-grow: 1;
+}
+
+header, main, footer {
+  flex-shrink: 0;
+}
+
+/* typography */
+
+h1 {
+  font-size: clamp(map.get($fontsizes-mobile, "header"), calc(3vw + 0.5rem) , map.get($fontsizes-desktop, "header"));
+  font-weight: map.get($fontweights, "light");
+  color: var(--clr-neutral-gray);
+  line-height: 1;
+}
+
+strong {
+  font-weight: map.get($fontweights, "bold");
+  color: var(--clr-neutral-dark-blue);
+}
+
+/* button styles */
+
+.btn {
+  display: inline-block;
+  padding: 1.15em 3.875em;    // 1.125em 3.875em
+  border: none;
+  border-radius: 1.75rem;
+  font-size: clamp(map.get($fontsizes-mobile, "text"), calc(1vw + 0.25rem) , map.get($fontsizes-desktop, "text"));
+  font-weight: map.get($fontweights, "semi-bold");
+  line-height: 1.35;
+}
+
+.btn-primary {
+  @extend .btn;
+  background-color: var(--clr-primary);
+  color: white;
+
+  box-shadow: 0px 5px 10px 2px rgba(76, 123, 243, 0.230414);
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
+/* form styles */
+
+input[type="email"] {
+  background: none;
+  border: 1px solid var(--clr-secondary-blue);
+  border-radius: 1.75rem;
+  padding: 1em 2rem;
+  
+  color: hsla(223, 59%, 70%, 1);
+
+  &::placeholder {
+    font-size: clamp(map.get($fontsizes-mobile, "text"), calc(1vw + 0.25rem) , map.get($fontsizes-desktop, "text"));
+  }
+
+  &:focus-visible {
+    border: 1px solid var(--clr-primary);
+    outline: none;
+  }
+}
+
+.invalid,
+.invalid:focus,
+.invalid:focus-visible {
+  outline: 1px solid var(--clr-secondary-red);
+  border: 1px solid var(--clr-secondary-red);
+}
+
+
+.error-message  {
+  padding-top: 1em;
+  font-size: clamp(map.get($fontsizes-mobile, "copyright"), calc(1vw + 0.25rem) , map.get($fontsizes-desktop, "copyright"));
+  font-style: italic;
+  color: var(--clr-secondary-red);
+}

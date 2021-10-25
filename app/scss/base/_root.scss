@@ -1,0 +1,17 @@
+/* ---------------------------- */
+/* ---------- ROOT CSS -------- */
+/* ---------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+  /* colors */
+  --clr-primary: hsl(223, 87%, 63%);
+  --clr-secondary-blue: hsl(223, 100%, 88%);
+  --clr-secondary-red: hsl(354, 100%, 66%);
+  --clr-neutral-gray: hsl(0, 0%, 59%);
+  --clr-neutral-dark-blue: hsl(209, 33%, 12%);
+
+  /* font stuff */
+  --ff-primary: 'Libre Franklin', sans-serif;
+}

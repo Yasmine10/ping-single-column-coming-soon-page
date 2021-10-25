@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script defer src="https://kit.fontawesome.com/b95f0b9af4.js" crossorigin="anonymous"></script>
+  <script defer src="app/js/form-validation.js"></script>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="app/assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/dist/css/main.css">
+
+  <title>Frontend Mentor | Ping coming soon page</title>
+</head>
+<body>
+
+  <header class="header">
+    <img src="/app/assets/images/logo.svg" alt="Ping.">
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="launching">
+        <h1 class="launching__title">We are launching <strong>soon!</strong></h1>
+        <p class="launching__text">Subscribe and get notified</p>
+        <form id="form" class="launching__form" action="/" method="GET">
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your email address...">
+            <small id="error-email" class="error-message"></small>
+          </div>
+          <button type="submit" class="btn-primary">Notify Me</button>
+        </form>
+        
+        <img class="launching__image" src="/app/assets/images/illustration-dashboard.png" alt="Screenshot of what the website will look like">
+      </section>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="social-links">
+      <ul role="list" class="social-links__list">
+        <li class="social-links__item">
+          <a class="social-links__link" href="" aria-label="Facebook">
+            <i class="fab fa-facebook-f icon" aria-hidden="true" title="Facebook"></i>
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__link" href="" aria-label="Twitter">
+            <i class="fab fa-twitter icon" aria-hidden="true" title="Twitter"></i>
+          </a>
+        </li>
+        <li class="social-links__item">
+          <a class="social-links__link" href="" aria-label="Instagram">
+            <i class="fab fa-instagram icon" aria-hidden="true" title="Instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
